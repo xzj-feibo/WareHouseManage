@@ -5,18 +5,16 @@ import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.xzj.local.UserThreadLocal;
 import com.xzj.mapper.DeptMapper;
 import com.xzj.mapper.UsersMapper;
-import com.xzj.mdc.MDCKey;
 import com.xzj.model.Dept;
 import com.xzj.resp.*;
 import com.xzj.service.IDeptService;
-import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -62,13 +60,13 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper,Dept> implements IDe
         //新增
         if (deptId == null){
             //初始密码
-            dept.setCreateUser(Long.valueOf(MDC.get(MDCKey.USER_ID)));
+            dept.setCreateUser(UserThreadLocal.get().getUserId());
             int insert = mapper.insert(dept);
             Resp.toReturn(insert>0?"成功":"失败",insert>0);
         }
         //更新
         dept.setId(deptId);
-        dept.setUpdateUser(Long.valueOf(MDC.get(MDCKey.USER_ID)));
+        dept.setUpdateUser(UserThreadLocal.get().getUserId());
         int update = mapper.updateById(dept);
         return Resp.toReturn(update>0?"成功":"失败",update>0);
     }

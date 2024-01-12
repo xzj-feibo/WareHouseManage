@@ -19,6 +19,8 @@ public class Users extends Base{
 
     private String account;
 
+    private String gender;
+
     private String password;
 
     private Long deptId;
@@ -26,24 +28,9 @@ public class Users extends Base{
     @TableField(value = "phone")
     private String userMobile;
 
-//    private Long createUser;
-//
-//    private Timestamp createTime;
-
-//    @TableField(value = "update_time")
-//    private Timestamp editTime;
-//
-//    private Long updateUser;
-
     @TableField(exist = false)
     private String roleName;
 
     @TableField(exist = false)
     private String deptName;
-
-//    @TableField(exist = false)
-//    private String createUserName;
-//
-//    @TableField(exist = false)
-//    private String editUserName;
 }

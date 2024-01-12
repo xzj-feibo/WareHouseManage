@@ -2,16 +2,15 @@ package com.xzj.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.xzj.local.UserThreadLocal;
 import com.xzj.mapper.MenuMapper;
 import com.xzj.mapper.RoleMenuMapper;
-import com.xzj.mdc.MDCKey;
 import com.xzj.model.*;
 import com.xzj.resp.ListResp;
 import com.xzj.resp.Resp;
 import com.xzj.service.IMenuService;
 
 import com.xzj.vo.MenuVo;
-import org.slf4j.MDC;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -35,7 +34,7 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper,Menu> implements IMe
     @Override
     public ListResp<List<Menu>> selectMenuList() {
         //得到当前用户在系统中的角色id
-        Long roleId = Long.valueOf(MDC.get(MDCKey.USER_ROLE_ID));
+        Long roleId = UserThreadLocal.get().getRoleId();
         List<Long> menuIds = roleMenuMapper.selectByRoleId(roleId);
         //查询出来的菜单列表
         List<Menu> menus = new ArrayList<>();

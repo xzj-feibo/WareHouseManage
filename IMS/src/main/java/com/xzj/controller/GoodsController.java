@@ -7,6 +7,8 @@ import com.xzj.service.IGoodsService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.io.File;
+import java.io.FileInputStream;
 
 /**
  * author DunZhu
@@ -31,13 +33,16 @@ public class GoodsController {
     @PostMapping("Goods/save")
     public Resp saveOrUpdate(@RequestParam(value = "goodsId",required = false) Long goodsId,
                              @RequestParam(value = "goodsName")String goodsName,
-                             @RequestParam("goodsNo") String goodsNo
+                             @RequestParam("goodsNo") String goodsNo,
+                             @RequestParam("price") Double price,
+                             @RequestParam("inventory") Integer inventory,
+                             @RequestParam("stemPlace") String stemPlace
     ){
-        return service.saveOrUpdate(goodsId, goodsName,goodsNo);
+        return service.saveOrUpdate(goodsId, goodsName,goodsNo,price,inventory,stemPlace);
     }
 
     @DeleteMapping("Goods/delete")
-    public Resp delete(){
-        return null;
+    public Resp delete(@RequestParam(value = "ids") Long goodsId){
+        return service.delete(goodsId);
     }
 }

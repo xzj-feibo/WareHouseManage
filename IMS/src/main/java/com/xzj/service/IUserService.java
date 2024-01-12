@@ -8,7 +8,7 @@ import java.util.List;
 
 
 /**
- * @author 夏子健
+ * @author DunZhu
  * @version 1.0
  * @date 2023/7/6 18:33
  */
@@ -35,7 +35,7 @@ public interface IUserService extends IService<Users> {
      * @param deptId
      * @return
      */
-    Resp saveOrUpdate(Long userId, String account, String userName, String userMobile, Long roleId, Long deptId);
+    Resp saveOrUpdate(Long userId, String account, String userName, String gender,String userMobile, Long roleId, Long deptId);
 
     Resp delete(Long userId);
 

@@ -5,16 +5,15 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.xzj.auth.AuthInfo;
+import com.xzj.local.UserThreadLocal;
 import com.xzj.mapper.DeptMapper;
 import com.xzj.mapper.RoleMapper;
 import com.xzj.mapper.UsersMapper;
-import com.xzj.mdc.MDCKey;
 import com.xzj.model.Users;
 import com.xzj.resp.*;
 import com.xzj.service.IUserService;
 import com.xzj.utils.JwtUtil;
 import com.xzj.utils.RedisUtil;
-import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -67,6 +66,10 @@ public class UserServiceImpl extends ServiceImpl<UsersMapper,Users> implements I
         return loginResp;
     }
 
+    /**
+     * 根据当前时间+过期时间得到总时间戳
+     * @return
+     */
     public Long getExpiredTime(){
         return new Date().getTime() + expired;
     }
@@ -86,7 +89,9 @@ public class UserServiceImpl extends ServiceImpl<UsersMapper,Users> implements I
             li.setRoleName(roleMapper.selectById(li.getRoleId()).getRoleName());
             li.setDeptName(deptMapper.selectById(li.getDeptId()).getDeptName());
             li.setCreateUserName(mapper.selectById(li.getCreateUser()).getUserName());
-            li.setEditUserName(mapper.selectById(li.getUpdateUser()).getUserName());
+            if(li.getUpdateUser()!=null){
+                li.setEditUserName(mapper.selectById(li.getUpdateUser()).getUserName());
+            }
         });
         PageInfo<Users> info = new PageInfo<>(list);
         PageResp<List<Users>> resp = new PageResp<>();
@@ -96,26 +101,25 @@ public class UserServiceImpl extends ServiceImpl<UsersMapper,Users> implements I
     }
 
     @Override
-    public Resp saveOrUpdate(Long userId, String account, String userName, String userMobile, Long roleId, Long deptId) {
+    public Resp saveOrUpdate(Long userId, String account, String userName, String gender,String userMobile, Long roleId, Long deptId) {
         Users users = new Users();
         users.setAccount(account);
         users.setUserName(userName);
+        users.setGender(gender);
         users.setUserMobile(userMobile);
         users.setDeptId(deptId);
         users.setRoleId(roleId);
         //新增
         if (userId == null){
-//            users.setCreateTime(new Date());
             //初始密码
             users.setPassword("123456");
-            users.setCreateUser(Long.valueOf(MDC.get(MDCKey.USER_ID)));
+            users.setCreateUser(UserThreadLocal.get().getUserId());
             int insert = mapper.insert(users);
             Resp.toReturn(insert>0?"成功":"失败",insert>0);
         }
         //更新
         users.setId(userId);
-//        users.setUpdateTime(new Date());
-        users.setUpdateUser(Long.valueOf(MDC.get(MDCKey.USER_ID)));
+        users.setUpdateUser(UserThreadLocal.get().getUserId());
         int update = mapper.updateById(users);
         return Resp.toReturn(update>0?"成功":"失败",update>0);
     }

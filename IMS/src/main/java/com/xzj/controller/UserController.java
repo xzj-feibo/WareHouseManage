@@ -32,12 +32,13 @@ public class  UserController {
     @PostMapping("User/save")
     public Resp saveOrUpdate(@RequestParam(value = "userId",required = false) Long userId,
                              @RequestParam(value = "userName")String userName,
+                             @RequestParam(value = "gender") String gender,
                              @RequestParam("account") String account,
                              @RequestParam(value = "userMobile")String userMobile,
                              @RequestParam(value = "roleId") Long roleId,
                              @RequestParam(value = "deptId") Long deptId
     ){
-        return service.saveOrUpdate(userId, account, userName, userMobile, roleId, deptId);
+        return service.saveOrUpdate(userId, account, userName, gender,userMobile, roleId, deptId);
     }
 
     @DeleteMapping("User/delete")

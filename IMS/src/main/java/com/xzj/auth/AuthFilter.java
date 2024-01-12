@@ -2,14 +2,14 @@ package com.xzj.auth;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.xzj.local.UserThreadLocal;
 import com.xzj.resp.Resp;
 import com.xzj.utils.JsonUtil;
+import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import com.xzj.constant.Const;
 import com.xzj.exception.ImsAuthException;
-import com.xzj.mdc.MDCKey;
-import com.xzj.mdc.MDCScope;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 
@@ -25,13 +25,12 @@ import java.util.*;
  * @date 2023/7/7 21:08
  */
 @Slf4j
+@NoArgsConstructor
 public class AuthFilter implements Filter {
     private AuthenticatorImpl authenticator;
     private AuthenticatorRedisImpl authenticatorRedis;
     private Set<String> urifilter;
 
-    public AuthFilter() {
-    }
     public AuthFilter(AuthenticatorImpl authenticator,AuthenticatorRedisImpl authenticatorRedis) {
         this.authenticator = authenticator;
         this.authenticatorRedis = authenticatorRedis;
@@ -68,7 +67,7 @@ public class AuthFilter implements Filter {
                 return;
         }
         //不符合放行标准，需要鉴权
-        try(MDCScope mdcScope = new MDCScope()) {
+        try {
             String header = request.getHeader("token"); //获取请求头中AUTHORIZATION值
             //AUTHORIZATION为空时直接获取名为token的字段值，否则获取AUTHORIZATION字段值
             String token = StringUtils.isEmpty(header) ? request.getParameter("token") : header;
@@ -86,10 +85,8 @@ public class AuthFilter implements Filter {
             if (authInfo == null){
                 throw  new RuntimeException("鉴权失败");
             }
-            mdcScope.put(MDCKey.USER_ID,String.valueOf(authInfo.getUserId()));
-            mdcScope.put(MDCKey.USER_NAME,authInfo.getUserName());
-            mdcScope.put(MDCKey.USER_ROLE_ID,String.valueOf(authInfo.getRoleId()));
-            //todo auth放到一个作用域里面
+            //保存当前用户信息
+            UserThreadLocal.put(authInfo);
             filterChain.doFilter(servletRequest, servletResponse);
         }
         catch (ImsAuthException e){

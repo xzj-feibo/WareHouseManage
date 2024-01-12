@@ -4,16 +4,14 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.xzj.local.UserThreadLocal;
 import com.xzj.mapper.MenuMapper;
 import com.xzj.mapper.RoleMapper;
 import com.xzj.mapper.RoleMenuMapper;
 import com.xzj.mapper.UsersMapper;
-import com.xzj.mdc.MDCKey;
 import com.xzj.model.*;
 import com.xzj.resp.*;
-import com.xzj.service.IMenuService;
 import com.xzj.service.IRoleService;
-import org.slf4j.MDC;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -51,7 +49,9 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper,Role> implements IRo
         List<Role> list = mapper.selectList(queryWrapper);
         list.forEach(li->{
             li.setCreateUserName(usersMapper.selectById(li.getCreateUser()).getUserName());
-            li.setEditUserName(usersMapper.selectById(li.getUpdateUser()).getUserName());
+            if(li.getUpdateUser()!=null){
+                li.setEditUserName(usersMapper.selectById(li.getUpdateUser()).getUserName());
+            }
         });
         PageInfo<Role> info = new PageInfo<>(list);
 
@@ -69,13 +69,13 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper,Role> implements IRo
         //新增
         if (roleId == null){
             //初始密码
-            role.setCreateUser(Long.valueOf(MDC.get(MDCKey.USER_ID)));
+            role.setCreateUser(UserThreadLocal.get().getUserId());
             int insert = mapper.insert(role);
             Resp.toReturn(insert>0?"成功":"失败",insert>0);
         }
         //更新
         role.setId(roleId);
-        role.setUpdateUser(Long.valueOf(MDC.get(MDCKey.USER_ID)));
+        role.setUpdateUser(UserThreadLocal.get().getRoleId());
         int update = mapper.updateById(role);
         return Resp.toReturn(update>0?"成功":"失败",update>0);
     }
@@ -107,9 +107,6 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper,Role> implements IRo
     @Transactional(rollbackFor = Exception.class)
     public Resp roleRightSave(Long roleId, List<Long> menuIds) {
         //删除之前的记录
-//        RoleMenuExample roleMenuExample = new RoleMenuExample();
-//        roleMenuExample.createCriteria().andRoleIdEqualTo(roleId);
-//        int deleteCount = roleMenuMapper.deleteByExample(roleMenuExample);
         roleMenuMapper.delete(new QueryWrapper<RoleMenu>().eq("role_id",roleId));
          //批量插入数据
         int ret = 0;

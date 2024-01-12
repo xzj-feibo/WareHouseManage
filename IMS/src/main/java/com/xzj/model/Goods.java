@@ -23,5 +23,6 @@ public class Goods extends Base{
     @TableField("goods_code")
     private String goodsNo;
     private Double price;
+    private Integer inventory;
     private String stemPlace;
 }

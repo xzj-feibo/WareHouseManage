@@ -10,6 +10,10 @@ import java.sql.Timestamp;
  * project IMS
  * date 2024/1/9
  **/
+
+/**
+ * 其他表共有的属性
+ */
 @Data
 public class Base {
     private Long createUser;

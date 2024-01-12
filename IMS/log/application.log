@@ -1,0 +1,281 @@
+12:35:46.437 [main] INFO  com.xzj.ImsApplication - Starting ImsApplication using Java 11.0.15.1 on LAPTOP-U2V6LQKN with PID 14644 (F:\培训\项目\库存管理\code\IMS\target\classes started by Peter in F:\培训\项目\库存管理\code\IMS)
+12:35:46.441 [main] INFO  com.xzj.ImsApplication - No active profile set, falling back to 1 default profile: "default"
+12:35:47.313 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+12:35:47.317 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+12:35:47.342 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+12:35:48.191 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+12:35:48.199 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+12:35:48.200 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:35:48.200 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.75]
+12:35:48.293 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:35:48.293 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1799 ms
+12:35:49.186 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'deptController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'deptServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'deptMapper' defined in file [F:\培训\项目\库存管理\code\IMS\target\classes\com\xzj\mapper\DeptMapper.class]: Invocation of init method failed; nested exception is java.lang.NoSuchMethodError: org.apache.ibatis.scripting.xmltags.ForEachSqlNode.<init>(Lorg/apache/ibatis/session/Configuration;Lorg/apache/ibatis/scripting/xmltags/SqlNode;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+12:35:49.190 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+12:35:49.203 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+12:35:49.255 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    com.baomidou.mybatisplus.core.MybatisXMLScriptBuilder$ForEachHandler.handleNode(MybatisXMLScriptBuilder.java:230)
+
+The following method did not exist:
+
+    org.apache.ibatis.scripting.xmltags.ForEachSqlNode.<init>(Lorg/apache/ibatis/session/Configuration;Lorg/apache/ibatis/scripting/xmltags/SqlNode;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+The calling method's class, com.baomidou.mybatisplus.core.MybatisXMLScriptBuilder$ForEachHandler, was loaded from the following location:
+
+    jar:file:/D:/mvn/com/baomidou/mybatis-plus-core/3.5.3.2/mybatis-plus-core-3.5.3.2.jar!/com/baomidou/mybatisplus/core/MybatisXMLScriptBuilder$ForEachHandler.class
+
+The called method's class, org.apache.ibatis.scripting.xmltags.ForEachSqlNode, is available from the following locations:
+
+    jar:file:/D:/mvn/org/mybatis/mybatis/3.5.7/mybatis-3.5.7.jar!/org/apache/ibatis/scripting/xmltags/ForEachSqlNode.class
+
+The called method's class hierarchy was loaded from the following locations:
+
+    org.apache.ibatis.scripting.xmltags.ForEachSqlNode: file:/D:/mvn/org/mybatis/mybatis/3.5.7/mybatis-3.5.7.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains compatible versions of the classes com.baomidou.mybatisplus.core.MybatisXMLScriptBuilder$ForEachHandler and org.apache.ibatis.scripting.xmltags.ForEachSqlNode
+
+12:41:17.136 [main] INFO  com.xzj.ImsApplication - Starting ImsApplication using Java 11.0.15.1 on LAPTOP-U2V6LQKN with PID 17496 (F:\培训\项目\库存管理\code\IMS\target\classes started by Peter in F:\培训\项目\库存管理\code\IMS)
+12:41:17.139 [main] INFO  com.xzj.ImsApplication - No active profile set, falling back to 1 default profile: "default"
+12:41:18.154 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+12:41:18.156 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+12:41:18.179 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+12:41:18.803 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+12:41:18.810 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+12:41:18.810 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:41:18.810 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.75]
+12:41:18.892 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:41:18.892 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1707 ms
+12:41:21.357 [main] WARN  o.s.b.s.r.RedisStarterDeprecationWarningAutoConfiguration - spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+12:41:21.395 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+12:41:21.413 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+12:41:21.708 [main] INFO  com.xzj.ImsApplication - Started ImsApplication in 5.053 seconds (JVM running for 6.0)
+12:41:45.604 [http-nio-8080-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+12:41:45.606 [http-nio-8080-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+12:41:45.608 [http-nio-8080-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+12:44:08.146 [http-nio-8080-exec-6] INFO  com.xzj.aspect.WebLogAspect - 请求地址：http://localhost:8080/api/login
+12:44:08.147 [http-nio-8080-exec-6] INFO  com.xzj.aspect.WebLogAspect - 请求方法：POST
+12:44:08.149 [http-nio-8080-exec-6] INFO  com.xzj.aspect.WebLogAspect - 方法签名信息：com.xzj.controller.LoginController,login
+12:44:08.158 [http-nio-8080-exec-6] INFO  com.xzj.aspect.WebLogAspect - 请求参数：["adele","123321"]
+12:44:08.169 [http-nio-8080-exec-6] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：UsersMapper.login(..)
+12:44:08.191 [http-nio-8080-exec-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+12:44:08.505 [http-nio-8080-exec-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+12:44:08.579 [http-nio-8080-exec-6] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：410 ms
+12:44:08.585 [http-nio-8080-exec-6] INFO  com.xzj.aspect.WebLogAspect - 业务层耗时：439 ms
+12:44:09.669 [http-nio-8080-exec-8] INFO  com.xzj.aspect.WebLogAspect - 请求地址：http://localhost:8080/api/menu
+12:44:09.669 [http-nio-8080-exec-3] INFO  com.xzj.aspect.WebLogAspect - 请求地址：http://localhost:8080/api/Goods/list
+12:44:09.669 [http-nio-8080-exec-3] INFO  com.xzj.aspect.WebLogAspect - 请求方法：POST
+12:44:09.670 [http-nio-8080-exec-3] INFO  com.xzj.aspect.WebLogAspect - 方法签名信息：com.xzj.controller.GoodsController,selectDeptList
+12:44:09.669 [http-nio-8080-exec-8] INFO  com.xzj.aspect.WebLogAspect - 请求方法：GET
+12:44:09.671 [http-nio-8080-exec-8] INFO  com.xzj.aspect.WebLogAspect - 方法签名信息：com.xzj.controller.MenuController,selectMenuList
+12:44:09.671 [http-nio-8080-exec-3] INFO  com.xzj.aspect.WebLogAspect - 请求参数：[1,10,null,null]
+12:44:09.671 [http-nio-8080-exec-8] INFO  com.xzj.aspect.WebLogAspect - 请求参数：[]
+12:44:09.687 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：RoleMenuMapper.selectByRoleId(..)
+12:44:09.698 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectList(..)
+12:44:09.709 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：22 ms
+12:44:09.711 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.724 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：13 ms
+12:44:09.724 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.727 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：3 ms
+12:44:09.727 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.731 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：4 ms
+12:44:09.731 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.734 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：3 ms
+12:44:09.735 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.738 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：3 ms
+12:44:09.738 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.741 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：3 ms
+12:44:09.741 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.744 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：3 ms
+12:44:09.745 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.748 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：3 ms
+12:44:09.748 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.751 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：3 ms
+12:44:09.751 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.755 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：4 ms
+12:44:09.755 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.757 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:44:09.757 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.761 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：4 ms
+12:44:09.761 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.765 [http-nio-8080-exec-8] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：4 ms
+12:44:09.770 [http-nio-8080-exec-8] INFO  com.xzj.aspect.WebLogAspect - 业务层耗时：101 ms
+12:44:09.831 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：133 ms
+12:44:09.831 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.835 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：4 ms
+12:44:09.835 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.839 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：4 ms
+12:44:09.839 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.843 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：4 ms
+12:44:09.844 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.846 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:44:09.846 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.849 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：3 ms
+12:44:09.849 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.853 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：4 ms
+12:44:09.853 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.857 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：4 ms
+12:44:09.857 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.860 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：3 ms
+12:44:09.860 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.862 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:44:09.862 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.865 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：3 ms
+12:44:09.866 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.868 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:44:09.868 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.872 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：4 ms
+12:44:09.872 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.875 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：3 ms
+12:44:09.875 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.879 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：4 ms
+12:44:09.879 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.881 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:44:09.882 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.886 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：4 ms
+12:44:09.886 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.890 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：4 ms
+12:44:09.890 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.892 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:44:09.892 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.895 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：3 ms
+12:44:09.895 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:44:09.898 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：3 ms
+12:44:09.907 [http-nio-8080-exec-3] INFO  com.xzj.aspect.WebLogAspect - 业务层耗时：238 ms
+12:45:41.643 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+12:45:41.660 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+12:45:44.354 [main] INFO  com.xzj.ImsApplication - Starting ImsApplication using Java 11.0.15.1 on LAPTOP-U2V6LQKN with PID 3244 (F:\培训\项目\库存管理\code\IMS\target\classes started by Peter in F:\培训\项目\库存管理\code\IMS)
+12:45:44.357 [main] INFO  com.xzj.ImsApplication - No active profile set, falling back to 1 default profile: "default"
+12:45:45.199 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+12:45:45.201 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+12:45:45.224 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+12:45:45.926 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+12:45:45.935 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+12:45:45.935 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:45:45.935 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.75]
+12:45:46.029 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:45:46.030 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1626 ms
+12:45:48.409 [main] WARN  o.s.b.s.r.RedisStarterDeprecationWarningAutoConfiguration - spring-boot-starter-redis is deprecated as of Spring Boot 1.4, please migrate to spring-boot-starter-data-redis
+12:45:48.441 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+12:45:48.458 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+12:45:48.723 [main] INFO  com.xzj.ImsApplication - Started ImsApplication in 4.81 seconds (JVM running for 5.726)
+12:45:54.234 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+12:45:54.235 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+12:45:54.236 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+12:45:54.289 [http-nio-8080-exec-1] INFO  com.xzj.aspect.WebLogAspect - 请求地址：http://localhost:8080/api/Role/list/no/parms
+12:45:54.289 [http-nio-8080-exec-3] INFO  com.xzj.aspect.WebLogAspect - 请求地址：http://localhost:8080/api/Dept/list/no/params
+12:45:54.292 [http-nio-8080-exec-1] INFO  com.xzj.aspect.WebLogAspect - 请求方法：POST
+12:45:54.292 [http-nio-8080-exec-3] INFO  com.xzj.aspect.WebLogAspect - 请求方法：POST
+12:45:54.293 [http-nio-8080-exec-3] INFO  com.xzj.aspect.WebLogAspect - 方法签名信息：com.xzj.controller.DeptController,selectDeptListNoParams
+12:45:54.293 [http-nio-8080-exec-1] INFO  com.xzj.aspect.WebLogAspect - 方法签名信息：com.xzj.controller.RoleController,selectRoleListNoParams
+12:45:54.296 [http-nio-8080-exec-2] INFO  com.xzj.aspect.WebLogAspect - 请求地址：http://localhost:8080/api/User/list
+12:45:54.297 [http-nio-8080-exec-2] INFO  com.xzj.aspect.WebLogAspect - 请求方法：POST
+12:45:54.297 [http-nio-8080-exec-2] INFO  com.xzj.aspect.WebLogAspect - 方法签名信息：com.xzj.controller.UserController,selectUserList
+12:45:54.305 [http-nio-8080-exec-3] INFO  com.xzj.aspect.WebLogAspect - 请求参数：[]
+12:45:54.305 [http-nio-8080-exec-1] INFO  com.xzj.aspect.WebLogAspect - 请求参数：[]
+12:45:54.307 [http-nio-8080-exec-2] INFO  com.xzj.aspect.WebLogAspect - 请求参数：[1,10,"",""]
+12:45:54.320 [http-nio-8080-exec-1] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectList(..)
+12:45:54.324 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectList(..)
+12:45:54.324 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectList(..)
+12:45:54.370 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+12:45:54.668 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+12:45:54.734 [http-nio-8080-exec-3] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：410 ms
+12:45:54.734 [http-nio-8080-exec-1] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：414 ms
+12:45:54.742 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：418 ms
+12:45:54.745 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.747 [http-nio-8080-exec-1] INFO  com.xzj.aspect.WebLogAspect - 业务层耗时：458 ms
+12:45:54.747 [http-nio-8080-exec-3] INFO  com.xzj.aspect.WebLogAspect - 业务层耗时：458 ms
+12:45:54.749 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：4 ms
+12:45:54.750 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.752 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.753 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.755 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.756 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.758 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.759 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.763 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：4 ms
+12:45:54.763 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.765 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.765 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.769 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：4 ms
+12:45:54.769 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.772 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：3 ms
+12:45:54.772 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.775 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：3 ms
+12:45:54.775 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.780 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：5 ms
+12:45:54.780 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.783 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：3 ms
+12:45:54.783 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.788 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：5 ms
+12:45:54.789 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.794 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：5 ms
+12:45:54.794 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.799 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：5 ms
+12:45:54.800 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.802 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.803 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.807 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：4 ms
+12:45:54.807 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.810 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：3 ms
+12:45:54.811 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.813 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.813 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.816 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：3 ms
+12:45:54.816 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.818 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.818 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.820 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.820 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.822 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.822 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.824 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.824 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.826 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.827 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.829 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.829 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.831 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.831 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.833 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.833 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.835 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.835 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.837 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.837 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.839 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.839 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.841 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.841 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.844 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：3 ms
+12:45:54.844 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.846 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.846 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.848 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.848 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.850 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.850 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.852 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.852 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.854 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.854 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.856 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.856 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.858 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.858 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库开始执行：BaseMapper.selectById(..)
+12:45:54.860 [http-nio-8080-exec-2] INFO  com.xzj.aspect.DaoLogAspect - 数据库耗时：2 ms
+12:45:54.865 [http-nio-8080-exec-2] INFO  com.xzj.aspect.WebLogAspect - 业务层耗时：569 ms
+13:11:36.676 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:11:36.694 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

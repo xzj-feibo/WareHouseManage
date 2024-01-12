@@ -1,11 +1,11 @@
 package com.xzj.auth;
 
 import com.xzj.exception.ImsAuthException;
-import com.xzj.utils.JwtUtil;
 import com.xzj.utils.RedisUtil;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Component;
 
 /**
  * @author 夏子健
@@ -17,7 +17,6 @@ import org.springframework.beans.factory.annotation.Value;
 @NoArgsConstructor
 public class AuthenticatorRedisImpl implements Authenticator{
     private RedisUtil util;
-
     /**
      * Bearer xxxxxx 客户端鉴权时添加的Bearer，说明鉴权类型
      * @param token

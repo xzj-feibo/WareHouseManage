@@ -25,11 +25,15 @@
     <el-table size="small" :data="listData" highlight-current-row v-loading="loading" border element-loading-text="拼命加载中" style="width: 100%;border-color: #3a8ee6">
       <el-table-column align="center" type="selection" width="60">
       </el-table-column>
+      <el-table-column align="center" sortable prop="id" label="列表id" v-if="false" width="120" >
+      </el-table-column>
       <el-table-column sortable prop="goodsName" label="商品名称" width="120">
       </el-table-column>
       <el-table-column sortable prop="goodsNo" label="商品代码" width="120">
       </el-table-column>
       <el-table-column sortable prop="price" label="商品价格(元)" width="120">
+      </el-table-column>
+      <el-table-column sortable prop="inventory" label="商品库存" width="120">
       </el-table-column>
       <el-table-column sortable prop="stemPlace" label="原产地" width="150">
       </el-table-column>
@@ -65,6 +69,15 @@
         <el-form-item label="商品代码" prop="goodsNo">
           <el-input size="small" v-model="editForm.goodsNo" auto-complete="off" placeholder="请输入商品代码"></el-input>
         </el-form-item>
+        <el-form-item label="商品价格" prop="price">
+          <el-input size="small" v-model="editForm.price" auto-complete="off" placeholder="请输入商品价格"></el-input>
+        </el-form-item>
+        <el-form-item label="商品库存" prop="price">
+          <el-input size="small" v-model="editForm.inventory" auto-complete="off" placeholder="请输入商品数量"></el-input>
+        </el-form-item>
+        <el-form-item label="原产地" prop="stemPlace">
+          <el-input size="small" v-model="editForm.stemPlace" auto-complete="off" placeholder="请输入原产地"></el-input>
+        </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button size="small" @click="closeDialog">取消</el-button>
@@ -90,6 +103,7 @@ export default {
         goodsName: '',
         goodsNo: '',
         price: '',
+        inventory:'',
         stemPlace:'',
         token: localStorage.getItem('logintoken')
       },
@@ -100,6 +114,7 @@ export default {
         ],
         goodsNo: [{ required: true, message: '请输入商品代码', trigger: 'blur' }],
         price: [{required: true, message: '请输入商品价格', trigger: 'blur'}],
+        inventory: [{required: true, message: '请输入商品数量',trigger: 'blur'}],
         stemPlace: [{required: true, message: '请输入商品原产地', trigger: 'blur'}]
       },
       formInline: {
@@ -109,7 +124,7 @@ export default {
         varName: '',
         token: localStorage.getItem('logintoken')
       },
-      // 删除部门
+      // 删除商品
       seletedata: {
         ids: '',
         token: localStorage.getItem('logintoken')
@@ -146,70 +161,6 @@ export default {
     // 获取公司列表
     getdata(parameter) {
       this.loading = true
-      // 模拟数据开始
-      // let res = {
-      //   code: 0,
-      //   msg: null,
-      //   count: 5,
-      //   data: [
-      //     {
-      //       addUser: null,
-      //       editUser: null,
-      //       addTime: 1521062371000,
-      //       editTime: 1526700200000,
-      //       deptId: 2,
-      //       deptName: 'XX分公司',
-      //       deptNo: '1',
-      //       parentId: 1
-      //     },
-      //     {
-      //       addUser: null,
-      //       editUser: null,
-      //       addTime: 1521063247000,
-      //       editTime: 1526652291000,
-      //       deptId: 3,
-      //       deptName: '上海测试',
-      //       deptNo: '02',
-      //       parentId: 1
-      //     },
-      //     {
-      //       addUser: null,
-      //       editUser: null,
-      //       addTime: 1526349555000,
-      //       editTime: 1526349565000,
-      //       deptId: 12,
-      //       deptName: '1',
-      //       deptNo: '11',
-      //       parentId: 1
-      //     },
-      //     {
-      //       addUser: null,
-      //       editUser: null,
-      //       addTime: 1526373178000,
-      //       editTime: 1526373178000,
-      //       deptId: 13,
-      //       deptName: '5',
-      //       deptNo: '5',
-      //       parentId: 1
-      //     },
-      //     {
-      //       addUser: null,
-      //       editUser: null,
-      //       addTime: 1526453107000,
-      //       editTime: 1526453107000,
-      //       deptId: 17,
-      //       deptName: 'v',
-      //       deptNo: 'v',
-      //       parentId: 1
-      //     }
-      //   ]
-      // }
-      // this.loading = false
-      // this.listData = res.data
-      // this.pageparm.currentPage = this.formInline.page
-      // this.pageparm.pageSize = this.formInline.limit
-      // this.pageparm.total = res.count
-      // 模拟数据结束
 
       /***
        * 调用接口，注释上面模拟数据 取消下面注释
@@ -250,10 +201,11 @@ export default {
       this.editFormVisible = true
       if (row != undefined && row != 'undefined') {
         this.title = '修改'
-        this.editForm.goodsId = row.goodsId
+        this.editForm.goodsId = row.id
         this.editForm.goodsName = row.goodsName
         this.editForm.goodsNo = row.goodsNo
         this.editForm.price = row.price
+        this.editForm.inventory = row.inventory
         this.editForm.stemPlace = row.stemPlace
       } else {
         this.title = '添加'
@@ -261,6 +213,7 @@ export default {
         this.editForm.goodsName = ''
         this.editForm.goodsNo = ''
         this.editForm.price = ''
+        this.editForm.inventory = ''
         this.editForm.stemPlace = ''
       }
     },
@@ -295,7 +248,7 @@ export default {
         }
       })
     },
-    // 删除公司
+    // 删除商品
     deleteUser(index, row) {
       this.$confirm('确定要删除吗?', '信息', {
         confirmButtonText: '确定',
@@ -303,7 +256,7 @@ export default {
         type: 'warning'
       })
         .then(() => {
-          GoodsDelete(row.goodsId)
+          GoodsDelete(row.id)
             .then(res => {
               if (res.success) {
                 this.$message({
